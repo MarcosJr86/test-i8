@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Perfil;
+use App\Models\Repositorio;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -52,5 +53,18 @@ class User extends Authenticatable
     public function perfil()
     {
         return $this->hasOne(Perfil::class, 'user_id','user_id');
+    }
+
+
+
+
+    /**
+    * Relación uno a muchos
+    * 
+    * @return \Illuminate\Database\Eloquent\Relations\HasMany
+    */
+    public function repositorios()
+    {
+        return $this->hasMany(Repositorio::class,'user_id','user_id');
     }
 }
