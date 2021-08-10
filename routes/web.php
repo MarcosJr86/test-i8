@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\extraerAPIController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*
+|Ruta  para invocar el controlador que estrae los datos desde una API
+| */
+Route::get('/extraer-api', [extraerAPIController::class, 'extraerAPI'])->name("extraer-api");
