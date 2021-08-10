@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Rol;
 use App\Models\Perfil;
 use App\Models\Repositorio;
 use Illuminate\Notifications\Notifiable;
@@ -66,5 +67,16 @@ class User extends Authenticatable
     public function repositorios()
     {
         return $this->hasMany(Repositorio::class,'user_id','user_id');
+    }
+
+
+    /**
+    * Relación muchos a muchos
+    * 
+    * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    */
+    public function roles()
+    {
+        return $this->belongsToMany(Rol::class,'roles_users','user_id','id_rol');
     }
 }

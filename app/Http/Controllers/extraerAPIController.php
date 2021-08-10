@@ -7,8 +7,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Http;
 
+
+
+
 class extraerAPIController extends Controller
 {
+    /**
+    * Extrae datos  desde la API pública https://jsonplaceholder.typicode.com/users
+    * 
+    * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse
+    */
     public function extraerAPI(){
         $respuesta = new Http();
         $usuarios = new stdClass();
