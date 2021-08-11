@@ -4,7 +4,7 @@
 
 <div class="m-4">
    
-    <h1 class="text-center text-primary">EXTRAER DATOS DESDE API</h1>
+    <h1 class="text-center text-primary"> DATOS EXTRAÍDOS DESDE API</h1>
     @if (session('error'))
     <div class="alert alert-danger">
         {{ session('error') }}
@@ -27,5 +27,8 @@
         </table>
     </div>
     @endif
+    <div class="mb-3 text-center">
+        <a href="{{route('home')}}" class="btn btn-primary btn-lg " tabindex="-1" role="button" aria-disabled="true">INICIO</a>
+    </div>
 </div>
 @endsection

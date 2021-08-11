@@ -16,7 +16,7 @@ use App\Http\Controllers\extraerAPIController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 /*
 |Ruta  para invocar el controlador que estrae los datos desde una API
